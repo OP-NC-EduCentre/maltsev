@@ -6,12 +6,16 @@
 SELECT pharmacy_id, location
 	FROM pharmacy 
 	WHERE 
-		location LIKE 'Ode%';
+		location LIKE 'Ode%'
+			OR location LIKE 'Kyi%'
+			OR location LIKE 'Myk%';
 		
 /*
 PHARMACY_ID LOCATION
 ----------- --------------------
           1 Odesa, main street 1
+          2 Kyiv, main street 13
+          3 Mykolaiv some street
           6 Odesa, main street 2
 */
 	
@@ -21,12 +25,14 @@ PHARMACY_ID LOCATION
 SELECT pharmacy_id, location
 	FROM pharmacy 
 	WHERE 
-     regexp_like(location, '^Ode');
+     regexp_like(location, '^Ode|^Kyi|^Myk');
 	 
 /*
 PHARMACY_ID LOCATION
 ----------- --------------------
           1 Odesa, main street 1
+          2 Kyiv, main street 13
+          3 Mykolaiv some street
           6 Odesa, main street 2
 */
 
@@ -39,7 +45,7 @@ SELECT first_name,
 	last_name, 
 	pharmacy_id AS p_id
 	FROM employee
-	WHERE regexp_like(pharmacy_id, '[3-8]');
+	WHERE regexp_like(pharmacy_id, '.*[3-8].*');
 
 /*
 FIRST_NAME           LAST_NAME                            P_ID
