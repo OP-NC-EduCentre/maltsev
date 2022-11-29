@@ -4,4 +4,5 @@ SELECT
     price,
     production_date,
     expiration_date
-FROM medicine WHERE name LIKE 'z_n%';
+FROM medicine
+WHERE name LIKE 'z_n%'
