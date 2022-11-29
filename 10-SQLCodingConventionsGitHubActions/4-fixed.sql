@@ -1,7 +1,7 @@
 SELECT
-    employee.first_name,
-    employee.last_name,
+    e.first_name,
+    e.last_name,
     pharmacy.location
-FROM employee
+FROM employee e
 INNER JOIN pharmacy
     ON (employee.pharmacy_id = pharmacy.pharmacy_id);
