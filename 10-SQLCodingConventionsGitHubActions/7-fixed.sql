@@ -1,5 +1,5 @@
-DELETE FROM pharmacy AS p
+DELETE FROM pharmacy
 WHERE NOT EXISTS
     (SELECT employee.pharmacy_id
-        FROM employee e
-        WHERE e.pharmacy_id = p.pharmacy_id);
+        FROM employee
+        WHERE employee.pharmacy_id = pharmacy.pharmacy_id);
